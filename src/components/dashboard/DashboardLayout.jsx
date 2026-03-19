@@ -21,21 +21,22 @@ export default function DashboardLayout(){
       <div
         className={`
           fixed md:static z-50 
+          h-screen
           transform ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
           md:translate-x-0
           transition-transform duration-300
         `}
       >
-        <Sidebar />
+        <Sidebar className="h-full flex flex-col"/>
       </div>
 
 
             {/* Right Side */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col h-screen overflow-y-auto">
 
         
         {/* Topbar */}
-        <div className="flex flex-1 flex-col bg-grey-100 h-14 px-4">
+        <div className="flex flex-1 flex-col bg-gray-100 h-14 px-4">
 
           {/* Mobile Menu Button */}
           <button
