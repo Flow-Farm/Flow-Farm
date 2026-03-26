@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Added useNavigate
 import { FiHome, FiBarChart2, FiMessageCircle, FiSettings, FiHelpCircle, FiLogOut } from "react-icons/fi";
 
 export default function Sidebar() {
+  const navigate = useNavigate(); // Initialize the navigate function
+
   return (
     <>
       <style>{`
@@ -103,7 +105,11 @@ export default function Sidebar() {
             <span>Contact us</span>
           </div>
 
-          <div className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[rgba(255,100,100,0.08)] hover:text-red-400 transition-colors duration-150 text-sm cursor-pointer mt-1">
+          {/* Updated Log out button */}
+          <div 
+            onClick={() => navigate("/")} // Navigates to root (signin)
+            className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[rgba(255,100,100,0.08)] hover:text-red-400 transition-colors duration-150 text-sm cursor-pointer mt-1"
+          >
             <FiLogOut size={15} />
             <span>Log out</span>
           </div>
