@@ -16,8 +16,6 @@
     "express": "^5.2.1",
     "firebase": "^12.10.0",
     "lucide-react": "^0.576.0",
-    "mongodb": "^7.1.0",
-    "mongoose": "^9.2.2",
     "mysql2": "^3.20.0",
     "react": "^19.2.0",
     "react-chartjs-2": "^5.3.1",
