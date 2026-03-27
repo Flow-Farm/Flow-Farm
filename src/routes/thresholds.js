@@ -22,6 +22,9 @@ const thresholdSchema = z.object({
   min_value: z.number(),
   max_value: z.number(),
   updated_by: z.number().int().positive(),
+}).refine((data) => data.min_value <= data.max_value, {
+  message: 'min_value must be less than or equal to max_value',
+  path: ['min_value'],
 });
 
 router.put('/:tankId/:sensorTypeId', async (req, res, next) => {
